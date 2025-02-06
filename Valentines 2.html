@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Valentine's Surprise</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6e6;
+        }
+        .container {
+            margin-top: 20%;
+        }
+        h1 {
+            color: #ff4d4d;
+        }
+        .heart {
+            font-size: 50px;
+            color: red;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .yes {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        .no {
+            background-color: grey;
+            color: white;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body onload="askOut()">
+    <div class="container" id="mainContent">
+        <h1>Will you be my Valentine? <span class="heart">❤️</span></h1>
+        <button class="yes" onclick="followUp()">Yes</button>
+        <button class="no" onclick="alert('Saddie cawr. Please try again 😿')">No</button>
+    </div>
+
+    <div class="container hidden" id="celebrationPage">
+        <h1>Bada option thaa tere pe 🎉❤️</h1>
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXFldXFlZ25jb3duMzA1NTNsMng1bGdla21ud3U2ejRrem1qanNzcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/P4GxohAK1vaKI2yH8E/giphy.gif" alt="Dancing Cat">
+        <p>Chipi Chipi time</p>
+    </div>
+
+    <script>
+        function askOut() {
+            setTimeout(function() {
+                alert("Hey love, will you be my Valentine? 💖");
+            }, 1000);
+        }
+
+        function followUp() {
+            let choice = confirm("Mueheheheehehehe\n\nWhere do you want to go out for Valentine's?\n\nOK: 'You Pick'\nCancel: 'I will be responsible and pick'");
+
+            if (choice) {
+                alert("As expected. 😌❤️");
+            } else {
+                alert("I am pretty sure you will ask me to pick on the actual day, it was just a test. You passed. 😆❤️");
+            }
+
+            // Show the celebration page
+            document.getElementById("mainContent").style.display = "none";
+            document.getElementById("celebrationPage").classList.remove("hidden");
+        }
+    </script>
+</body>
+</html>
